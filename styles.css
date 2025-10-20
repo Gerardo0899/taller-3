@@ -9,7 +9,7 @@
 body {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    padding: 20px;
+    padding: 10px;
     overflow-x: hidden;
 }
 
@@ -50,17 +50,22 @@ body {
     100% { background-position: 1000px 0; }
 }
 
+@keyframes expandWidth {
+    to { width: 80%; }
+}
+
 .page {
-    width: 210mm;
-    height: 297mm;
+    width: 100%;
+    max-width: 1200px;
     background: white;
-    margin: 0 auto 30px;
-    padding: 40px;
+    margin: 0 auto 20px;
+    padding: 20px;
     box-shadow: 0 20px 60px rgba(0,0,0,0.3);
     position: relative;
     overflow: hidden;
     animation: fadeInUp 0.8s ease-out;
     transition: transform 0.3s ease;
+    border-radius: 10px;
 }
 
 .page:hover {
@@ -70,9 +75,9 @@ body {
 
 .header {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     position: relative;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
     animation: fadeInUp 1s ease-out;
 }
 
@@ -88,37 +93,34 @@ body {
     animation: expandWidth 1.5s ease-out 0.5s forwards;
 }
 
-@keyframes expandWidth {
-    to { width: 80%; }
-}
-
 h1 {
     color: #2d3748;
-    font-size: 32px;
+    font-size: clamp(20px, 5vw, 32px);
     font-weight: 800;
     margin-bottom: 10px;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     background: linear-gradient(90deg, #667eea, #764ba2, #667eea);
     background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     animation: shimmer 3s linear infinite;
+    line-height: 1.2;
 }
 
 .subtitle {
     color: #667eea;
-    font-size: 18px;
+    font-size: clamp(14px, 3vw, 18px);
     font-weight: 600;
     animation: fadeInUp 1.2s ease-out;
 }
 
 .intro-box {
     background: linear-gradient(135deg, #667eea15, #764ba215);
-    padding: 20px;
+    padding: 15px;
     border-radius: 15px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     border-left: 5px solid #667eea;
     animation: slideIn 1s ease-out;
     transition: all 0.3s ease;
@@ -126,28 +128,28 @@ h1 {
 }
 
 .intro-box:hover {
-    transform: translateX(10px);
+    transform: translateX(5px);
     box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
     border-left-width: 8px;
 }
 
 .intro-box p {
     color: #4a5568;
-    font-size: 13px;
+    font-size: clamp(11px, 2.5vw, 13px);
     line-height: 1.6;
 }
 
 .section {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     animation: fadeInUp 1s ease-out;
 }
 
 .section-title {
     background: linear-gradient(90deg, #667eea, #764ba2);
     color: white;
-    padding: 12px 20px;
+    padding: 10px 15px;
     border-radius: 10px;
-    font-size: 18px;
+    font-size: clamp(14px, 3vw, 18px);
     font-weight: 600;
     margin-bottom: 15px;
     display: flex;
@@ -161,7 +163,7 @@ h1 {
 .section-title::before {
     content: '●';
     margin-right: 10px;
-    font-size: 24px;
+    font-size: clamp(18px, 4vw, 24px);
     animation: pulse 2s infinite;
 }
 
@@ -220,19 +222,19 @@ h1 {
 
 .entity-box h3 {
     color: #667eea;
-    font-size: 16px;
+    font-size: clamp(13px, 3vw, 16px);
     margin-bottom: 8px;
 }
 
 .entity-box p {
     color: #4a5568;
-    font-size: 12px;
+    font-size: clamp(10px, 2.5vw, 12px);
     line-height: 1.5;
 }
 
 .process-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 15px;
     margin-bottom: 20px;
 }
@@ -256,7 +258,7 @@ h1 {
 .process-step:nth-child(6) { animation-delay: 0.6s; }
 
 .process-step:hover {
-    transform: translateY(-10px) scale(1.02);
+    transform: translateY(-5px) scale(1.02);
     box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
     border-color: #764ba2;
     background: linear-gradient(135deg, #ffffff, #f0f4ff);
@@ -286,7 +288,7 @@ h1 {
 
 .process-step h4 {
     color: #2d3748;
-    font-size: 14px;
+    font-size: clamp(12px, 2.8vw, 14px);
     margin-bottom: 8px;
     margin-top: 10px;
     transition: color 0.3s ease;
@@ -298,14 +300,14 @@ h1 {
 
 .process-step p {
     color: #4a5568;
-    font-size: 11px;
-    line-height: 1.4;
+    font-size: clamp(10px, 2.2vw, 11px);
+    line-height: 1.5;
 }
 
 .highlight-box {
     background: #fff5f5;
     border-left: 4px solid #fc8181;
-    padding: 12px;
+    padding: 10px;
     margin: 10px 0;
     border-radius: 5px;
     transition: all 0.3s ease;
@@ -318,14 +320,14 @@ h1 {
 
 .highlight-box p {
     color: #742a2a;
-    font-size: 11px;
+    font-size: clamp(10px, 2.2vw, 11px);
     font-weight: 500;
 }
 
 .info-box {
     background: #f0fff4;
     border-left: 4px solid #68d391;
-    padding: 12px;
+    padding: 10px;
     margin: 10px 0;
     border-radius: 5px;
     transition: all 0.3s ease;
@@ -338,7 +340,7 @@ h1 {
 
 .info-box p {
     color: #22543d;
-    font-size: 11px;
+    font-size: clamp(10px, 2.2vw, 11px);
     font-weight: 500;
 }
 
@@ -374,7 +376,7 @@ h1 {
 
 .timeline-item:hover {
     background: rgba(102, 126, 234, 0.05);
-    transform: translateX(10px);
+    transform: translateX(5px);
 }
 
 .timeline-item::before {
@@ -400,18 +402,18 @@ h1 {
 
 .timeline-item h4 {
     color: #2d3748;
-    font-size: 13px;
+    font-size: clamp(11px, 2.5vw, 13px);
     margin-bottom: 5px;
 }
 
 .timeline-item p {
     color: #4a5568;
-    font-size: 11px;
+    font-size: clamp(10px, 2.2vw, 11px);
 }
 
 .rights-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 15px;
 }
 
@@ -429,14 +431,14 @@ h1 {
 .rights-card:nth-child(2) { animation-delay: 0.4s; }
 
 .rights-card:hover {
-    transform: translateY(-10px) rotate(1deg);
+    transform: translateY(-5px);
     box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
     border-color: #667eea;
 }
 
 .rights-card h4 {
     color: #667eea;
-    font-size: 14px;
+    font-size: clamp(12px, 3vw, 14px);
     margin-bottom: 8px;
     font-weight: 600;
 }
@@ -448,11 +450,12 @@ h1 {
 
 .rights-card li {
     color: #4a5568;
-    font-size: 11px;
+    font-size: clamp(10px, 2.2vw, 11px);
     margin-bottom: 6px;
     padding-left: 20px;
     position: relative;
     transition: all 0.3s ease;
+    line-height: 1.4;
 }
 
 .rights-card li:hover {
@@ -475,7 +478,7 @@ h1 {
 
 .recommendations {
     background: linear-gradient(135deg, #fef5e7, #fdebd0);
-    padding: 20px;
+    padding: 15px;
     border-radius: 15px;
     border: 2px solid #f39c12;
     transition: all 0.3s ease;
@@ -490,7 +493,7 @@ h1 {
 
 .recommendations h3 {
     color: #d68910;
-    font-size: 16px;
+    font-size: clamp(13px, 3vw, 16px);
     margin-bottom: 12px;
     text-align: center;
 }
@@ -502,11 +505,11 @@ h1 {
 
 .recommendations li {
     color: #7d6608;
-    font-size: 11px;
+    font-size: clamp(10px, 2.2vw, 11px);
     margin-bottom: 8px;
     padding-left: 25px;
     position: relative;
-    line-height: 1.4;
+    line-height: 1.5;
     transition: all 0.3s ease;
 }
 
@@ -529,7 +532,7 @@ h1 {
 }
 
 .footer {
-    margin-top: 30px;
+    margin-top: 25px;
     padding-top: 15px;
     border-top: 2px solid #e2e8f0;
     animation: fadeInUp 1.2s ease-out;
@@ -537,16 +540,17 @@ h1 {
 
 .footer h4 {
     color: #2d3748;
-    font-size: 14px;
+    font-size: clamp(12px, 3vw, 14px);
     margin-bottom: 10px;
 }
 
 .footer p {
     color: #4a5568;
-    font-size: 9px;
-    line-height: 1.4;
-    margin-bottom: 3px;
+    font-size: clamp(8px, 2vw, 9px);
+    line-height: 1.5;
+    margin-bottom: 5px;
     transition: all 0.3s ease;
+    word-break: break-word;
 }
 
 .footer p:hover {
@@ -562,33 +566,84 @@ h1 {
 }
 
 .circle-1 {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     background: #667eea;
     top: -50px;
     right: -50px;
 }
 
 .circle-2 {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     background: #764ba2;
     bottom: -30px;
     left: -30px;
     animation-direction: reverse;
 }
 
-.tooltip {
-    position: fixed;
-    background: rgba(0,0,0,0.8);
-    color: white;
-    padding: 8px 12px;
-    border-radius: 5px;
-    font-size: 11px;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 1000;
+/* MEDIA QUERIES PARA RESPONSIVE */
+
+/* Tablets */
+@media (min-width: 600px) {
+    body {
+        padding: 20px;
+    }
+
+    .page {
+        padding: 30px;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .rights-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .intro-box:hover {
+        transform: translateX(10px);
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .page {
+        padding: 40px;
+        max-width: 210mm;
+    }
+
+    .circle-1 {
+        width: 200px;
+        height: 200px;
+    }
+
+    .circle-2 {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/* Pantallas muy pequeñas */
+@media (max-width: 380px) {
+    body {
+        padding: 5px;
+    }
+
+    .page {
+        padding: 15px;
+    }
+
+    .section-title {
+        padding: 8px 12px;
+    }
+
+    .step-number {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
 }
 
 @media print {
@@ -602,9 +657,19 @@ h1 {
         box-shadow: none;
         page-break-after: always;
         animation: none;
+        max-width: 210mm;
+        padding: 40px;
     }
 
     .page:hover {
         transform: none;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .rights-grid {
+        grid-template-columns: 1fr 1fr;
     }
 }
